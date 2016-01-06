@@ -2,7 +2,7 @@
 * @Author: apple
 * @Date:   2015-12-18 10:36:43
 * @Last Modified by:   apple
-* @Last Modified time: 2016-01-06 16:36:27
+* @Last Modified time: 2016-01-06 16:46:45
 */
 
 ;$(function () {
@@ -38,7 +38,8 @@
 		'11':'12',
 		'#86939a':'#617a8b',
 		'rgba(255,255,255,0.78)':'rgba(255,255,255,0.66)',
-		'#ffffff':'rgba(255,255,255,0.66)'
+		'#ffffff':'rgba(255,255,255,0.66)',
+		'rgba(0,0,0,0.34)': 'rgba(0,0,0,0.33)'
 	};
 	// font-type map 
 	var fontTypeMap = {
