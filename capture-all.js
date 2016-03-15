@@ -1,11 +1,26 @@
 /* 
 * @Author: apple
 * @Date:   2015-12-18 10:36:43
-* @Last Modified by:   apple
-* @Last Modified time: 2016-01-06 16:46:45
+* @Last Modified by:   qin yang
+* @Last Modified time: 2016-03-15 11:02:24
 */
 
 ;$(function () {
+	var colorMap_3 = {
+		'gray-primary': 'rgba(0,0,0,0.66)',
+		'gray-secondary': 'rgba(0,0,0,0.36)',
+		'gray-disable': 'rgba(0,0,0,0.26)',
+		'white-primary': 'rgba(255,255,255,0.86)',
+		'white-secondary': 'rgba(255,255,255,0.66)',
+		'white-disable': 'rgba(255,255,255,0.46)',
+		'link-primary': '#0096f6',
+		'system-primary': '#617a8b'
+	};
+	// font-color map
+	var colorMap_2 = {};
+	for (var key in colorMap_3) {
+		colorMap_2[colorMap_3[key]] = [key];
+	}
 	// 根据字体大小映射的
 	var fontSizeMap = {
 		'38':['headline3'],
@@ -19,27 +34,27 @@
 			'caption-black','caption-white','disable','link','system']
 	};
 	// 颜色映射
-	var colorMap = {
-		'rgba(0,0,0,0.54)':[
-			'headline3','headline2','headline','header',
-			'subheader','menu-black','body2-black','body-black',
-			'caption-black'],
-		'rgba(0,0,0,0.33)':['body1-black'],
-		'rgba(0,0,0,0.26)':['disable'],
-		'rgba(255,255,255,0.87)':['menu-white','body2-white','body-white'],
-		'rgba(255,255,255,0.66)':['caption-white'],
-		'rgba(255,255,255,0.54)':['body1-white'],
-		'#0689dd':['link'],
-		'#617a8b':['system']
-	};
+	var colorMap = {};
+	colorMap[colorMap_3['gray-primary']] = [
+		'headline3','headline2','headline','header',
+		'subheader','menu-black','body2-black','body-black',
+		'caption-black'
+	];
+	colorMap[colorMap_3['gray-secondary']] = ['body1-black'];
+	colorMap[colorMap_3['gray-disable']] = ['disable'];
+	colorMap[colorMap_3['white-primary']] = ['menu-white','body2-white','body-white'];
+	colorMap[colorMap_3['white-secondary']] = ['caption-white'];
+	colorMap[colorMap_3['white-disable']] = ['body1-white'];
+	colorMap[colorMap_3['link-primary']] = ['link'];
+	colorMap[colorMap_3['system-primary']] = ['system'];
 	// 差错映射
 	var patchMap = {
 		'13':'12',
 		'11':'12',
-		'#86939a':'#617a8b',
-		'rgba(255,255,255,0.78)':'rgba(255,255,255,0.66)',
-		'#ffffff':'rgba(255,255,255,0.66)',
-		'rgba(0,0,0,0.34)': 'rgba(0,0,0,0.33)'
+		'#86939a':colorMap_3['system-primary'],
+		'rgba(255,255,255,0.78)':colorMap_3['white-secondary'],
+		'#ffffff':colorMap_3['white-secondary'],
+		'rgba(0,0,0,0.34)': colorMap_3['gray-secondary']
 	};
 	// font-type map 
 	var fontTypeMap = {
@@ -51,17 +66,7 @@
 		'14':['menu', 'body2'],
 		'12':['body1', 'caption']
 	};
-	// font-color map
-	var colorMap_2 = {
-		'rgba(0,0,0,0.54)':       ['gray-primary'],
-		'rgba(0,0,0,0.33)':       ['gray-secondary'],
-		'rgba(0,0,0,0.26)':       ['gray-disable'],
-		'rgba(255,255,255,0.87)': ['white-primary'],
-		'rgba(255,255,255,0.66)': ['white-secondary'],
-		'rgba(255,255,255,0.54)': ['white-disable'],
-		'#0689dd':                ['link-primary'],
-		'#617a8b':                ['system-primary']
-	};
+	
 
 	$(document).click(function (event) {
 		setTimeout(function () {
